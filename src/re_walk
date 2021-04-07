@@ -86,62 +86,77 @@ if __name__ == '__main__':
 
     joint_val=np.zeros(18)
     plen.step(joint_val,0.1)    #for some reason, the robot doesn't want to move
-    rospy.sleep(1)        	#before we do this stupid solution, maybe initialize?
+    rospy.sleep(0.1)        	#before we do this stupid solution, maybe initialize?
 #=====Movement Below=================================================
     #for i in range(3):
     print("step 1")
     joint_val=np.zeros(18)
-    joint_val[1] = 0.2 #hinge
-    joint_val[5] = 0.2 #hinge
-    joint_val[7] = 0.2 #hinge
-    joint_val[11]= 0.2 #hinge
-    joint_val[13]= 0.2 #arms
-    joint_val[16]= -0.2 #arms
-    plen.step(joint_val,0.5)
-    rospy.sleep(0.5)
+    joint_val[1] = 0.1745329252
+    joint_val[5] = 0.1745329252
+    joint_val[11] = 0.1466076572
+    plen.step(joint_val,0.2*4)
+    rospy.sleep(0.2*4)
     #raw_input("Press Enter to continue...")
 
     print("step 2")#==============
-    joint_val[1] = 0.19
-    joint_val[8] = -0.6
-    joint_val[9] = 0.6
-    joint_val[10]= 0.3 
-    plen.step(joint_val,0.5)
-    rospy.sleep(0.5)
+    joint_val=np.zeros(18)
+    joint_val[1] = 0.1745329252
+    joint_val[2] = -0.1780235837
+    joint_val[3] = 0.5201081171
+    joint_val[4] = 0.2775073511
+    joint_val[5] = 0.2617993878
+    joint_val[7] = 0.1466076572
+    joint_val[11] = 0.1640609497
+    plen.step(joint_val,0.22*4)
+    rospy.sleep(0.22*4)
     #raw_input("Press Enter to continue...")
 
     print("step 3")
-    joint_val[10]= -0.3
-    joint_val[8]= -0.6
-    joint_val[9]= 0.3
-    plen.step(joint_val,0.5)
-    rospy.sleep(0.5)
+    joint_val=np.zeros(18)
+    joint_val[1] = 0.1745329252
+    joint_val[2] = -0.4468042885
+    joint_val[3] = 0.5864306287
+    joint_val[4] = 0.1204277184
+    joint_val[5] = 0.2129301687
+    joint_val[7] = 0.1466076572
+    joint_val[11] = 0.1466076572
+    joint_val[12] = 0.1204277184
+    joint_val[15] = 0.1256617061
+    plen.step(joint_val,0.260*4)
+    rospy.sleep(0.260*4)
     #raw_input("Press Enter to continue...")
 
     print("step 4")#=========
-    joint_val[1] = -0.2 #hinge
-    joint_val[5] = -0.2 #hinge
-    joint_val[7] = -0.2 #hinge
-    joint_val[11]= -0.2 #hinge
-    joint_val[2] = 0     
-    joint_val[3] = 0     	#paha
-    joint_val[4] = -0.3     	#mata_kaki depan (pitch)
-    joint_val[10]= -0.3 	#mata_kaki depan (pitch)
-    joint_val[12]= 0.6 		#arms
-    joint_val[13]= 0.6 		#arms opposing force
-    plen.step(joint_val,1)
-    rospy.sleep(1)
+    joint_val=np.zeros(18)
+    joint_val[1] = -0.1745329252
+    joint_val[2] = -0.2199114858
+    joint_val[3] = 0.2234021443
+    joint_val[4] = 0.0471238898
+    joint_val[5] = -0.1745329252
+    joint_val[7] = -0.1466076572
+    joint_val[8] = -0.0191986218
+    joint_val[9] = -0.2024581932
+    joint_val[10] = -0.2652900463
+    joint_val[11] = -0.1466076572
+    joint_val[12] = 0.2565634
+    joint_val[15] = 0.35255965089
+    plen.step(joint_val,0.420*4)
+    rospy.sleep(0.420*4)
     #raw_input("Press Enter to continue...")
     
     print("step 5")
-    joint_val[7] =0.1
-    joint_val[11]=0
-    joint_val[10]= 0
-    joint_val[2]= 0.7
-    joint_val[3]=-0.7
-    plen.step(joint_val,0.5)
-    rospy.sleep(0.5)
-    raw_input("Press Enter to continue...")
+    joint_val=np.zeros(18)
+    joint_val[1] = -0.1745329252
+    joint_val[5] = -0.1745329252
+    joint_val[7] = -0.1466076572
+    joint_val[8] = 0.2652900463
+    joint_val[9] = -0.6771877498
+    joint_val[10] = -0.3473205211
+    joint_val[11] = -0.1466076572
+    plen.step(joint_val,0.22*4)
+    rospy.sleep(0.22*4)
+    
+    #raw_input("Press Enter to continue...")
 #RESET==================
     print("Resetting")
     plen.reset()
