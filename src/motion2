@@ -88,8 +88,8 @@ if __name__ == '__main__':
     #print("Moving Joint 0 to Min")
     #joint_val[0]= 1.7
     #joint_val[1]= 1.7
-    plen.step(joint_val, 0.1)     #for some fucking reason, the dumbass robot doesn't want to move
-    rospy.sleep(1)        #before we do this stupid ass shit
+    plen.step(joint_val, 0.1)     
+    rospy.sleep(1)        
     
     for i in range(10):
 #=====Movement Below=================================================
