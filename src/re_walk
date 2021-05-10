@@ -85,8 +85,8 @@ if __name__ == '__main__':
     plen.reset()
 
     joint_val=np.zeros(18)
-    plen.step(joint_val,0.1)    #for some reason, the robot doesn't want to move
-    rospy.sleep(1)        	#before we do this stupid solution, maybe initialize?
+    plen.step(joint_val,0.1)    
+    rospy.sleep(1)        	
 #=====Movement Below=================================================
     for i in range(10):
 	    print("step 1")
